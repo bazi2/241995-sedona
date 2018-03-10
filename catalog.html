@@ -24,8 +24,64 @@
 			<h1 class="visually-hidden">Выбор гостиницы в городке Седона</h1>
 			
 			<section class="filters">
-				<!-- Здесь будет фильтр-форма подбора гостиницы -->
 				<h2 class="visually-hidden">Фильтр для поиска гостиницы</h2>
+				<form class="filter" action="https://echo.htmlacademy.ru" method="get">
+					<fieldset>
+						<legend>Инфраструктура:</legend>
+						<ul class="filter-list">
+							<li class="filter-option">
+								<input class="visually-hidden filter-checkbox" id="filter-pool" type="checkbox" name="pool" value="бассейн" checked>
+								<label for="filter-pool">Бассейн</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden filter-checkbox" id="filter-parking" type="checkbox" name="parking" value="парковка">
+								<label for="filter-parking">Парковка</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden filter-checkbox" id="filter-wi-fi" type="checkbox" name="Wi-fi" value="Wi-fi">
+								<label for="filter-wi-fi">Wi-fi</label>
+							</li>
+						</ul>
+					</fieldset>
+					<fieldset>
+						<legend>Тип жилья:</legend>
+						<ul class="filter-list">
+							<li class="filter-option">
+								<input class="visually-hidden filter-checkbox" id="filter-hotel" type="checkbox" name="hotel" value="гостиница" checked>
+								<label for="filter-hotel">Гостиница</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden filter-checkbox" id="filter-motel" type="checkbox" name="motel" value="мотель" checked>
+								<label for="filter-motel">Мотель</label>
+							</li>
+							<li class="filter-option">
+								<input class="visually-hidden filter-checkbox" id="filter-apartment" type="checkbox" name="apartment" value="Апартаменты" checked>
+								<label for="filter-apartment">Апартаменты</label>
+							</li>
+						</ul>
+					</fieldset>
+					<fieldset>
+						<div class="filter-range">
+							<div class="filter-range-title">Стоимость в сутки (р):</div>
+							<div class="price-controls">
+								<label class="min-price">от
+									<input type="text" name="min-price" value="0">
+								</label>
+								<label class="max-price">до
+									<input type="text" name="max-price" value="3000">
+								</label>
+							</div>
+							<div class="range-controls">
+								<div class="scale">
+									<div class="bar"></div>
+								</div>
+								<div class="range-toggle range-toggle-min"></div>
+								<div class="range-toggle range-toggle-max"></div>
+							</div>
+							<button class="button filter-button" type="submit">Показать</button>
+						</div>
+					</fieldset>
+				</form>
 			</section>
 
 			<section class="sort">

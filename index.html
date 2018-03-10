@@ -100,16 +100,41 @@
 
   			<section class="form">
           <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
-  				<!-- Здесь будет форма поиска гостиницы -->
+  				
+          <form class="form-search" action="https://echo.htmlacademy.ru" method="get">
+            <p class="search-option">
+              <label for="search-date-arrival">Дата заезда:</label>
+              <input id="search-date-arrival" type="text" name="date-arrival" placeholder="24 апреля 2017">
+              <button class="search-button search-button-arrival" type="button">Календарь</button>
+            </p>
+            <p class="search-option">
+              <label for="search-date-departure">Дата выезда:</label>
+              <input id="search-date-departure" type="text" name="date-departure" placeholder="4 июля 2017">
+              <button class="search-button search-button-departure" type="button">Календарь</button>
+            </p>
+            <p class="search-option">
+              <label for="search-adults">Взрослые:</label>
+              <button class="button search-button button-minus" type="button">Минус</button>
+              <input id="search-adults" type="number" name="adults" placeholder="2">
+              <button class="button search-button button-plus" type="button">Плюс</button>
+            </p>
+            <p class="search-option">
+              <label for="search-children">Дети:</label>
+              <button class="button search-button button-minus" type="button">Минус</button>
+              <input id="search-children" type="number" name="children" placeholder="0">
+              <button class="button search-button button-plus" type="button">Плюс</button>
+            </p>
+            <button class="button hotels-search-button" type="button">Найти</button>
+          </form>
   			</section>
   		</main>
 
   		<footer class="main-footer">
   			<a class="hashtag" href="#">#Visitsedona</a>
   			<ul class="social-list">
-  				<li><a class="social-button" href="#">Твитер</a></li>
-  				<li><a class="social-button" href="#">Фэйсбук</a></li>
-  				<li><a class="social-button" href="#">Ютуб</a></li>
+  				<li><a class="button social-button" href="#">Твитер</a></li>
+  				<li><a class="button social-button" href="#">Фэйсбук</a></li>
+  				<li><a class="button social-button" href="#">Ютуб</a></li>
   			</ul>
   			<p class="copyright">
   				<span>website by</span>
