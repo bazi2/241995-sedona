@@ -1,5 +1,8 @@
 body {
+	min-width: 1280px;
 	margin: 0;
+	padding: 0;
+
 	font-family: "PT Sans", "Arial", sans-serif;
 	font-size: 14px;
 	line-height: 21px;
@@ -18,11 +21,51 @@ body {
 	box-shadow: 5px 5px 15px 0px rgba(0, 1, 1, 0.2);
 }
 
+.main-header {
+	margin-bottom: 0;
+}
+
+.main-navigation {
+	display: flex;
+	position: relative;
+	min-height: 56px;
+
+	/*Временно для сетки*/
+	outline: 2px solid red;
+}
+
+.main-header-logo {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 138px;
+	transform: translateX(-50%);
+}
+
 .site-navigation {
+	display: flex;
+	margin: 0;
+	padding: 0;
 	list-style: none;
 }
 
+.site-navigation li {
+	width: 240px;
+
+	text-align: center;
+	vertical-align: middle;
+}
+
+.site-navigation li:nth-child(2) {
+	margin-right: 240px;
+}
+
 .site-navigation a {
+	display: block;
+	width: 100%;
+	padding-top: 16px;
+	padding-bottom: 18px;
+	
 	line-height: 26px;
 	text-decoration: none;
 	color: #000000;
@@ -46,7 +89,24 @@ body {
 	text-align: center;
 }
 
-.promo .promo-text-bold {
+.resons-content {
+
+	/*Временно для сетки*/
+	outline: 2px solid green;
+}
+
+.promo {
+	width: 1200px;
+	height: 564px;
+
+	margin-bottom: 59px;
+}
+
+.main-title {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
+
 	font-size: 21px;
 	line-height: 26px;
 	font-weight: 700;
@@ -59,13 +119,41 @@ body {
 }
 
 .resons-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+
 	list-style: none;
+
+	/*Временно для сетки*/
+	outline: 2px solid yellow;
+}
+
+.reson-item {
+	display: flex;
 }
 
 .reson-item-info {
+	width: 400px;
 	color: #ffffff;
 
 	background-color: #81b3d2;
+
+	/*Временно для сетки*/
+	outline: 2px solid orange;
+	min-height: 256px;s
+}
+
+.reson-photo {
+	width: 800px;
+	height: 256px;
+	margin: 0;
+	padding: 0;
+
+	/*Временно для сетки*/
+	outline: 2px solid orange;
 }
 
 .reson-item-title {
@@ -73,8 +161,23 @@ body {
 	font-weight: 700;
 }
 
+
+.reson-gray-list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
 .reson-item-gray {
+	width: 400px;
+
 	background-color: #eeeeee;
+
+	/*Временно для сетки*/
+	outline: 2px solid orange;
+	min-height: 256px;
 }
 
 .item-title-gray {
@@ -82,9 +185,22 @@ body {
 }
 
 .features-list {
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+
 	list-style: none;
 
 	background-color: #ffffff;
+}
+
+.features-item {	
+	width: 400px;
+
+	/*Временно для сетки*/
+	min-height: 330px;
+	outline: 2px solid orange;
 }
 
 .features-title {
@@ -100,9 +216,22 @@ body {
 	color: #000000;
 }
 
-.form {
+.search-wrapper {
+	position: relative;
+}
+
+.form-search {
+	position: absolute;
+	top: 180px;
+
+	/*Временно, потом подобрать точное значение*/
+	left: 300px;
+	width: 568px;
+	height: 395px;
+
 	background-color: #ffffff;
 	box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+	z-index: 10;
 }
 
 .button {
@@ -189,6 +318,11 @@ body {
 .search-option input:focus {
 	background-color: #ffffff;
 	border: 2px solid #eeeeee;
+}
+
+.map {
+	width: 1200px;
+	height: 593px;
 }
 
 /*Стили внутренней страницы*/
@@ -359,7 +493,21 @@ body {
 
 /*Подвал*/
 
+.footer-wrapper {
+	position: relative;
+
+	/*Временно для позиционирования подвала*/
+	outline: 2px solid red;
+}
+
 .main-footer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	min-width: 1200px;
+	min-height: 120px;
 	background-color: rgba(253, 252, 252, 0.9);
 }
 
