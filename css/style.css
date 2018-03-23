@@ -13,16 +13,35 @@ body {
 	background-color: #f2f2f2;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .wrapper {
 	width: 1200px;
 	margin: 0 auto;
 
 	background-color: #ffffff;	
-	box-shadow: 5px 5px 15px 0px rgba(0, 1, 1, 0.2);
-}
-
-.main-header {
-	margin-bottom: 0;
+	box-shadow: 0px 0px 40px 2px #dbdbdb;
 }
 
 .main-navigation {
@@ -95,14 +114,14 @@ body {
 	outline: 2px solid green;
 }
 
-.promo {
+.resons-content .promo {
 	width: 1200px;
 	height: 564px;
 
 	margin-bottom: 59px;
 }
 
-.main-title {
+.resons-content .main-title {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 30px;
@@ -113,12 +132,16 @@ body {
 	color: #000000;
 }
 
-.promo .promo-text {
+.resons-content .promo-text {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 52px;
+
 	line-height: 26px;
 	color: #333333;
 }
 
-.resons-list {
+.resons .resons-list {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -131,11 +154,12 @@ body {
 	outline: 2px solid yellow;
 }
 
-.reson-item {
+.resons-list .reson-item {
 	display: flex;
+	flex-direction: row;
 }
 
-.reson-item-info {
+.reson-item .reson-item-info {
 	width: 400px;
 	color: #ffffff;
 
@@ -146,47 +170,30 @@ body {
 	min-height: 256px;s
 }
 
-.reson-photo {
+.reson-item .reson-photo {
 	width: 800px;
 	height: 256px;
-	margin: 0;
-	padding: 0;
 
 	/*Временно для сетки*/
 	outline: 2px solid orange;
 }
 
-.reson-item-title {
+.reson-item-info .reson-item-title {
+	margin: 0;
+	padding: 0;
+
 	font-size: 21px;
 	font-weight: 700;
 }
 
-
-.reson-gray-list {
-	display: flex;
+.reson-item-info .reson-item-text {
 	margin: 0;
 	padding: 0;
-
-	list-style: none;
 }
 
-.reson-item-gray {
-	width: 400px;
-
-	background-color: #eeeeee;
-
-	/*Временно для сетки*/
-	outline: 2px solid orange;
-	min-height: 256px;
-}
-
-.item-title-gray {
-	color: #000000;
-}
-
-.features-list {
+.resons-item .features-list {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: row;
 	margin: 0;
 	padding: 0;
 
@@ -203,26 +210,79 @@ body {
 	outline: 2px solid orange;
 }
 
-.features-title {
+.features-item .features-title {
+	margin: 0;
+	padding: 0;
+
 	font-size: 21px;
 	color: #000000;
 }
 
+.features-item .features-text {
+	margin: 0;
+	padding: 0;
+}
 
-.search-title {
+.reson-item .reson-gray-list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.reson-gray-list .reson-item-gray {
+	width: 400px;
+
+	background-color: #eeeeee;
+
+	/*Временно для сетки*/
+	outline: 2px solid orange;
+	min-height: 256px;
+}
+
+.reson-item-gray .item-title-gray {
+	margin: 0;
+	padding: 0;
+
+	color: #000000;
+}
+
+.reson-item-gray .item-text-gray {
+	margin: 0;
+	padding: 0;
+} 
+
+.search {
+	padding-top: 49px;
+	/*Временно для сетки*/
+	outline: 2px solid cyan;
+}
+
+.search .search-wrapper {
+	position: relative;
+}
+
+.search .search-title {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 26px;
+
 	font-size: 30px;
 	font-weight: 700;
 	line-height: 36px;
 	color: #000000;
 }
 
-.search-wrapper {
-	position: relative;
+.search .search-text {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 42px;
 }
 
 .form-search {
 	position: absolute;
-	top: 180px;
+	top: 153px;
 
 	/*Временно, потом подобрать точное значение*/
 	left: 300px;
@@ -232,9 +292,13 @@ body {
 	background-color: #ffffff;
 	box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
 	z-index: 10;
+
+	/*Временно для сетки*/
+	outline: 2px solid black;
 }
 
 .button {
+	font-family: "PT Sans", "Arial" sans-serif;
 	font-weight: 700;
 	color: #ffffff;
 	text-transform: uppercase;
@@ -293,7 +357,10 @@ body {
 	line-height: 26px;
 }
 
-.search-option label {
+.form-search .search-option label {
+	margin: 0;
+	padding: 0;
+
 	font-size: 14px;
 	font-weight: 700;
 	line-height: 26px;
@@ -327,6 +394,14 @@ body {
 
 /*Стили внутренней страницы*/
 
+.inner-container {
+	display: flex;
+	flex-direction: column;
+
+	/*Временно для сетки*/
+	outline: 2px solid black;
+}
+
 .filters {
 	font-family: "PT Sans", "Arial", sans-serif;
 	color: #ffffff;
@@ -337,18 +412,26 @@ body {
 	background-color: #83a2c1;
 }
 
-.filters fieldset {
+.filters .filter {
+	display: flex;
+	padding: 30px 73px;
+
+	/*Временно для сетки*/
+	outline: 2px solid green;
+}
+
+.filter fieldset {
 	border: none;
 }
 
-.filters legend,
+.filter legend,
 .filter-range-title {
 	font-size: 16px;
 	line-height: 21px;
 	font-weight: 700;
 }
 
-.filters .filter-list {
+.filter .filter-list {
 	list-style: none;
 }
 
@@ -392,6 +475,15 @@ body {
 .filter-button:focus {
 	color: #000000;
 	background-color: #ffffff;
+}
+
+.sort {
+	padding-top: 29px;
+	padding-bottom: 32px;
+	padding-left: 73px;
+	padding-right: 73px;
+
+	border-bottom: 1px solid #f6f6f6;
 }
 
 .sort .sort-resalt {
@@ -440,12 +532,20 @@ body {
 	list-style: none;
 }
 
-.hotels-list {
+.catalog-hotels .hotels-list {
+	margin: 0;
+	padding: 0;
+
 	list-style: none;
 }
 
-.hotels-item {
+.hotels-list .hotels-item {
+	padding: 30px  73px;
+
 	border-bottom: 1px solid #f6f6f6;
+
+	/*Временно для сетки*/
+	outline: 2px solid purple;
 }
 
 .hotels-title {
@@ -493,34 +593,56 @@ body {
 
 /*Подвал*/
 
-.footer-wrapper {
-	position: relative;
-
-	/*Временно для позиционирования подвала*/
-	outline: 2px solid red;
-}
-
 .main-footer {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	position: absolute;
 	bottom: 0;
 	min-width: 1200px;
 	min-height: 120px;
+
+	text-align: center;
 	background-color: rgba(253, 252, 252, 0.9);
+
+	/*Временно для сетки*/
+	outline: 2px solid cyan;
 }
 
 .main-footer .hashtag {
+	width: 400px;
 	font-size: 21px;
 	font-weight: 700;
 	line-height: 26px;
 	color: #000000;
 	text-decoration: none;
+
+	/*Временно для сетки*/
+	outline: 2px solid yellow;
 }
 
 .main-footer .social-list {
+	width: 400px;
+	margin: 0;
+	padding: 0;
+
 	list-style: none;
+
+	/*Временно для сетки*/
+	outline: 2px solid yellow;
+}
+
+.copyright {
+	width: 400px;
+	margin: 0;
+	padding: 0;
+
+	/*Временно для сетки*/
+	outline: 2px solid yellow;
+}
+
+.copyright span {
+	color: #000000;
+	line-height: 26px;
 }
 
 .copyright-link:hover svg path,
@@ -532,8 +654,5 @@ body {
 	fill: #bdbbbc;
 }
 
-.copyright span {
-	color: #000000;
-	line-height: 26px;
-}
+
 
