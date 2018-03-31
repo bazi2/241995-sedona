@@ -1,7 +1,7 @@
 
 /*Общие стили*/
 body {
-	min-width: 1280px;
+	min-width: 1200px;
 	margin: 0;
 	padding: 0;
 
@@ -120,27 +120,44 @@ input[type="radio"].visually-hidden {
 
 .site-navigation {
 	display: flex;
+	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
+
 	list-style: none;
 }
 
 .site-navigation li {
 	width: 240px;
-
-	text-align: center;
-	vertical-align: middle;
 }
 
-.site-navigation li:nth-child(2) {
-	margin-right: 240px;
+.site-navigation li:nth-child(4n+1),
+.site-navigation li:nth-child(4n+2) {
+  text-align: left;
+}
+
+.site-navigation li:nth-child(4n+3),
+.site-navigation li:nth-child(4n+4) {
+  text-align: right;
+}
+
+.site-navigation li:nth-child(4n+1) {
+	margin-left: 73px;
+}
+
+.site-navigation li:nth-child(4n+3) {
+	margin-left: 92px;
+}
+
+.site-navigation li:nth-child(4n+4) {
+	margin-left: 4px;
 }
 
 .site-navigation a {
 	display: block;
 	width: 100%;
-	padding-top: 16px;
-	padding-bottom: 18px;
+	padding-top: 14px;
+	padding-bottom: 16px;
 	
 	line-height: 26px;
 	text-decoration: none;
@@ -148,17 +165,19 @@ input[type="radio"].visually-hidden {
 	font-weight: 700;
 }
 
-.site-navigation a:hover,
-.site-navigation a:focus {
-	color: #81b3d2;
+.site-navigation a:not(.site-navigation-current):hover,
+.site-navigation a:not(.site-navigation-current):focus {
+  color: #81b3d2;
 }
 
-.site-navigation a:active {
-	color: rgba(0, 0, 0, 0.3);
+.site-navigation a:not(.site-navigation-current):active {
+  color: inherit;
+  opacity: 0.3;
 }
 
 .site-navigation .site-navigation-current {
-	color: #766357;
+  color: #766357;
+  cursor: default;
 }
 
 /*Main*/
@@ -172,6 +191,7 @@ input[type="radio"].visually-hidden {
 	height: 564px;
 
 	margin-bottom: 59px;
+	background-color: #dceaf3;
 }
 
 .resons-content .main-title {
@@ -209,12 +229,17 @@ input[type="radio"].visually-hidden {
 	flex-direction: row;
 }
 
+.resons-list .reson-item-blue {
+	background-color: #81b3d2;
+}
+
 .reson-item .reson-item-info {
 	font: inherit;
 	width: 400px;
 	margin: 0;
-	padding: 0px 60px;
+	padding: 0px 45px;
 	padding-top: 47px;
+	padding-bottom: 60px;
 
 	color: #ffffff;
 
@@ -224,10 +249,12 @@ input[type="radio"].visually-hidden {
 .reson-item-info .reson-item-title {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 25px;
+	margin-bottom: 19px;
+	margin-left: 79px;
+	margin-right: 80px;
 
 	font-size: 21px;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 .reson-item-info .reson-item-number {
@@ -260,6 +287,11 @@ input[type="radio"].visually-hidden {
 	padding: 0;
 }
 
+.reson-item-info .item-text-short {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 .reson-item .reson-photo {
 	width: 800px;
 	height: 256px;
@@ -279,7 +311,7 @@ input[type="radio"].visually-hidden {
 .features-list .features-item {	
 	position: relative;
 	width: 33%;
-	padding: 162px 20px 84px 20px;
+	padding: 162px 50px 84px 50px;
 
 	text-align: center;
 }
@@ -332,8 +364,10 @@ input[type="radio"].visually-hidden {
 }
 
 .reson-gray-list .reson-item-gray {
+	display: flex;
+	flex-direction: column;
 	width: 400px;
-	padding: 50px 20px;
+	padding: 46px 60px 60px;
 
 	background-color: #eeeeee;
 	box-sizing: border-box;
@@ -342,6 +376,8 @@ input[type="radio"].visually-hidden {
 .reson-item-gray .item-title-gray {
 	margin: 0;
 	padding: 0;
+	margin-left: 80px;
+	margin-right: 80px;
 	margin-bottom: 25px;
 
 	color: #000000;
@@ -421,7 +457,47 @@ input[type="radio"].visually-hidden {
 
 	z-index: 10;
 	box-sizing: border-box;
+	display: none;
 }
+
+.search .search-wrapper-show {
+	display: block;
+	animation-name: bounce;
+	animation-duration: 1s;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(-86px);
+	}
+	70% {
+		transform: translateY(0px);
+	}
+	90% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.search .search-wrapper-error {
+	animation-name: shake;
+	animation-duration: 0.6s;
+}
+
+@keyframes shake {
+	5%, 100% {
+		opacity: 1;
+	}
+	10%, 30%, 50%, 70%, 90% {
+		opacity: 0.3;
+	}
+	20%, 40%, 60%, 80% {
+		opacity: 0.8;
+	}
+}
+
 
 .form-search {
 	display: flex;
@@ -633,8 +709,16 @@ input[type="radio"].visually-hidden {
 }
 
 .map {
-	width: 1200px;
-	height: 593px;
+  background-image: url(../img/map.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 593px;
+}
+
+.map .google-map {
+  width: 100%;
+  height: 593px;
+  border: none;
 }
 
 /*Стили внутренней страницы*/
@@ -647,7 +731,7 @@ input[type="radio"].visually-hidden {
 /*Фильтр*/
 
 .filters {
-	padding: 30px 73px;
+	padding: 28px 68px;
 
 	background-color: #5f8ab3;
 	background-image: url("../img/filter-background.jpg");
@@ -658,7 +742,7 @@ input[type="radio"].visually-hidden {
 
 .filter {
 	display: flex;
-	align-items: flex-start;
+	justify-content: space-between;
 	padding: 0;
 	margin: 0;
 
@@ -669,12 +753,14 @@ input[type="radio"].visually-hidden {
 .filter fieldset {
 	margin: 0;
 	padding: 0;
+	margin-bottom: 5px;
+
 	border: none;
 }
 
 .filter fieldset:first-child {
 	width: 140px;
-	margin-right: 100px;
+	margin-right: 116px;
 }
 
 .filter fieldset:nth-child(2) {
@@ -682,7 +768,7 @@ input[type="radio"].visually-hidden {
 }
 
 .filter fieldset:last-child {
-	width: 320px;
+	width: 325px;
 	margin-left: auto;
 }
 
@@ -694,7 +780,7 @@ input[type="radio"].visually-hidden {
 }
 
 .filter legend {
-	margin-bottom: 27px;
+	margin-bottom: 23px;
 
 	text-align: left;
 }
@@ -707,8 +793,12 @@ input[type="radio"].visually-hidden {
 }
 
 .filter-option {
-	margin-bottom: 23px;
-	padding-left: 40px;
+	margin-bottom: 25px;
+	padding-left: 44px;
+}
+
+.filter-option:last-child {
+	margin-bottom: 0;
 }
 
 .filter-option .checkbox-label {
@@ -727,7 +817,7 @@ input[type="radio"].visually-hidden {
 .checkbox-label input[type="checkbox"] + .checkbox-indicator {
     position: absolute;
     top: 0px;
-    left: -39px;
+    left: -40px;
     width: 27px;
     height: 27px;
 
@@ -738,7 +828,7 @@ input[type="radio"].visually-hidden {
 .checkbox-label input[type="checkbox"]:checked + .checkbox-indicator {
     position: absolute;
     top: 0px;
-    left: -39px;
+    left: -40px;
     width: 27px;
     height: 27px;
 
@@ -749,7 +839,7 @@ input[type="radio"].visually-hidden {
 .checkbox-label input[type="checkbox"]:disabled:checked + .checkbox-indicator {
     position: absolute;
     top: 0px;
-    left: -39px;
+    left: -40px;
     width: 27px;
     height: 27px;
 
@@ -760,7 +850,7 @@ input[type="radio"].visually-hidden {
 .checkbox-label input[type="checkbox"]:disabled + .checkbox-indicator {
     position: absolute;
     top: 0px;
-    left: -39px;
+    left: -40px;
     width: 27px;
     height: 27px;
 
@@ -769,19 +859,19 @@ input[type="radio"].visually-hidden {
 }
 
 .filter-range {
-	width: 330px;
+	width: 316px;
 	margin: 0px auto;
 }
 
 .filter-range-title {
-	margin-bottom: 11px;
+	margin-bottom: 9px;
 
 	text-align: left;
 }
 
 .price-controls {
 	position: relative;
-	height: 36px;
+	height: 32px;
 	margin-bottom: 20px;
 
 	font-size: 0;
@@ -804,11 +894,11 @@ input[type="radio"].visually-hidden {
 
 .price-controls label {
 	display: inline-block;
-	width: 90px;
-	padding-left: 65px;
+	width: 115px;
+	padding-left: 33px;
 
 	font-size: 14px;
-	line-height: 38px;
+	line-height: 31px;
 	vertical-align: top;
 
 	cursor: pointer;
@@ -847,7 +937,7 @@ input[type="radio"].visually-hidden {
 
 .range-controls .bar {
 	height: 2px;
-	width: 80%;
+	width: 79%;
 
 	background-color: #ffffff;
 }
@@ -880,6 +970,7 @@ input[type="radio"].visually-hidden {
 
 .filter-button {
 	margin: 0 auto;
+	margin-right: 11px;
 	padding: 6px 35px;
 	font-size: 14px;
 	font-weight: 400;
@@ -903,7 +994,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	padding-top: 29px;
-	padding-bottom: 32px;
+	padding-bottom: 30px;
 	padding-left: 73px;
 	padding-right: 73px;
 
@@ -928,7 +1019,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-	width: 363px;
+	width: 354px;
 }
 
 .sort .sort-title {
@@ -1001,7 +1092,7 @@ input[type="radio"].visually-hidden {
 .sort-arrow-up::before {
 	content: "";
 	position: absolute;
-	bottom: 0;
+	bottom: 6px;
 	right: 6px;
 	width: 0;
 	height: 0;
@@ -1020,8 +1111,8 @@ input[type="radio"].visually-hidden {
 .sort-arrow-down::before {
 	content: "";
 	position: absolute;
-	bottom: 0;
-	right: 7px;
+	bottom: 7px;
+	right: 0;
 	width: 0;
 	height: 0;
 
@@ -1081,7 +1172,7 @@ input[type="radio"].visually-hidden {
 .hotels-row-left {
 	display: flex;
 	justify-content: space-between;
-	width: 423px;
+	width: 422px;
 }
 
 .hotels-row-left img {
@@ -1100,6 +1191,8 @@ input[type="radio"].visually-hidden {
 .item-info .hotels-title {
 	margin: 0;
 	padding: 0;
+	margin-top: -5px;
+	margin-bottom: -6px;
 
 	font-size: 21px;
 	font-weight: 700;
@@ -1193,19 +1286,20 @@ input[type="radio"].visually-hidden {
 }
 
 .hotels-stars {
-	width: 70px;
-	height: 17px;
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 0;
+	padding: 0;
+}
+
+.hotels-stars span {
+	display: block;
+	margin: 0;
+	margin-left: 6px;
+	width: 18px;
+	height: 18px;
 
 	background-image: url("../img/star.svg");
-	background-repeat: repeat-x;
-}
-
-.stars-motel {
-	width: 52px;
-}
-
-.stars-apartment {
-	width: 35px;
 }
 
 .hotels-rating {
@@ -1244,6 +1338,8 @@ input[type="radio"].visually-hidden {
 
 .main-footer .hashtag {
 	width: 240px;
+	margin-left: 7px;
+
 	font-size: 21px;
 	font-weight: 700;
 	line-height: 26px;
@@ -1253,6 +1349,7 @@ input[type="radio"].visually-hidden {
 
 .main-footer .social-list {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	width: 400px;
 	margin: 0;
