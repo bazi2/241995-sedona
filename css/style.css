@@ -187,17 +187,29 @@ input[type="radio"].visually-hidden {
 }
 
 .resons-content .promo {
-	width: 1200px;
-	height: 564px;
+	height: 508px;
+	padding-top: 76px;
 
-	margin-bottom: 59px;
+	text-align: center;
+
 	background-color: #dceaf3;
+	background-image: url("../img/header-bottom.png"),
+					  url("../img/background-header.jpg");
+	background-size: 100% 57px,
+					 100% auto;
+	background-repeat: no-repeat;
+	background-position: center bottom,
+						 center 28%;
+	box-sizing: border-box;
 }
 
 .resons-content .main-title {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 30px;
+	padding-top: 60px;
+	margin-left: 370px;
+	margin-right: 370px;
+	margin-bottom: 27px;
 
 	font-size: 21px;
 	line-height: 26px;
@@ -249,7 +261,7 @@ input[type="radio"].visually-hidden {
 .reson-item-info .reson-item-title {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 19px;
+	margin-bottom: 23px;
 	margin-left: 79px;
 	margin-right: 80px;
 
@@ -261,7 +273,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 25px;
+	margin-bottom: 21px;
 }
 
 .reson-item-info .reson-item-number::before,
@@ -311,7 +323,7 @@ input[type="radio"].visually-hidden {
 .features-list .features-item {	
 	position: relative;
 	width: 33%;
-	padding: 162px 50px 84px 50px;
+	padding: 160px 50px 82px 50px;
 
 	text-align: center;
 }
@@ -321,12 +333,11 @@ input[type="radio"].visually-hidden {
 	position: absolute;
 	top: 60px;
 	left: 50%;
-	margin-left: -37px;
 	width: 75px;
 	height: 75px;
 
 	background-repeat: no-repeat;
-	background-position: 0 0;
+	transform: translateX(-50%);
 }
 
 .features-list .features-icon-1::before {
@@ -338,13 +349,15 @@ input[type="radio"].visually-hidden {
 }
 
 .features-list .features-icon-3::before {
+	top: 56px;
+	left: 51%;
 	background-image: url("../img/icon-2.svg");
 }
 
 .features-item .features-title {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 25px;
+	margin-bottom: 24px;
 
 	font-size: 21px;
 	color: #000000;
@@ -380,6 +393,7 @@ input[type="radio"].visually-hidden {
 	margin-right: 80px;
 	margin-bottom: 25px;
 
+	font-size: 21px;
 	color: #000000;
 }
 
@@ -387,7 +401,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 25px;
+	margin-bottom: 21px;
 }
 
 .reson-item-gray .item-number-gray::before,
@@ -419,7 +433,7 @@ input[type="radio"].visually-hidden {
 .search .search-title {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 26px;
+	margin-bottom: 27px;
 
 	font-size: 30px;
 	font-weight: 700;
@@ -514,14 +528,17 @@ input[type="radio"].visually-hidden {
 .form-search .search-option {
 	display: flex;
 	align-items: baseline;
+	justify-content: space-between;
 	position: relative;	
 	padding: 0;
 	margin: 0;
 	margin-bottom: 30px;
+
+	text-align: left;
 }
 
 .form-search .search-option label {
-	min-width: 108px;
+	min-width: 95px;
 	margin: 0;
 	padding: 0;
 	margin-right: 18px;
@@ -651,7 +668,7 @@ input[type="radio"].visually-hidden {
 	content: "";
 	position: absolute;
 	top: 18px;
-	left: 13px;
+	left: 14px;
 	width: 12px;
 	height: 3px;
 
@@ -662,7 +679,7 @@ input[type="radio"].visually-hidden {
 	content: "";
 	position: absolute;
 	top: 18px;
-	left: 13px;
+	left: 11px;
 	width: 12px;
 	height: 3px;
 
@@ -673,7 +690,7 @@ input[type="radio"].visually-hidden {
 	content: "";
 	position: absolute;
 	top: 18px;
-	left: 13px;
+	left: 11px;
 	width: 12px;
 	height: 3px;
 
