@@ -1,5 +1,11 @@
+function closeForm() {
+  var close = document.querySelector(".search-wrapper");
+  close.classList.add("search-wrapper-close");
+}
+window.onload = closeForm;
 
-var search = document.querySelector(".search-button");
+
+var show = document.querySelector(".search-button");
 var popup = document.querySelector(".search-wrapper");
 var dateArrival = popup.querySelector("[name=date-arrival]");
 var form = popup.querySelector("form");
@@ -18,11 +24,15 @@ try {
 }
 
 
-search.addEventListener("click", function (evt) {
+show.addEventListener("click", function (evt) {
 	evt.preventDefault();
-	console.log("Клик по кнопке поиска");
-	popup.classList.toggle("search-wrapper-show");
-	popup.classList.remove("search-wrapper-error");
+	if (popup.classList.contains("search-wrapper-close")) {
+		popup.classList.toggle("search-wrapper-close");
+		popup.classList.add("search-wrapper-show")
+	} else {
+		popup.classList.toggle("search-wrapper-show");
+		popup.classList.add("search-wrapper-close");
+	}
 	
 	if (storage) {
 		dateArrival.value = storage;
@@ -43,15 +53,5 @@ form.addEventListener("submit", function (evt) {
 	localStorage.setItem("dateArrival", dateArrival.value);
 }
 }
-});
-
-window.addEventListener("keydown", function (evt) {
-	if (evt.keyCode === 27) {
-		if (popup.classList.contains("search-wrapper-show")) {
-			evt.preventDefault();
-			popup.classList.remove("search-wrapper-show");
-			popup.classList.remove("search-wrapper-error");
-		}
-	}
 });
 
