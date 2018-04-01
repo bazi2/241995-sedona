@@ -162,7 +162,6 @@ input[type="radio"].visually-hidden {
 }
 
 .site-navigation a {
-	/*display: block;*/
 	width: 100%;
 	margin-top: 14px;
 	margin-bottom: 16px;
@@ -495,11 +494,16 @@ input[type="radio"].visually-hidden {
 	margin-bottom: 50px;
 }
 
-.search-button {
+.search-wrapper-block {
+	position: relative;
 	width: 568px;
-	min-height: 86px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.search-button {
+	width: 100%;
+	min-height: 86px;
 
 	font: inherit;
 	font-size: 21px;
@@ -509,10 +513,9 @@ input[type="radio"].visually-hidden {
 
 .search .search-wrapper {
 	position: absolute;
-	left: 50%;
+	left: 0;
+	top: 85px;
 	width: 568px;
-	margin: 0;
-	margin-left: -284px;
 	padding: 55px;
 
 	background-color: #ffffff;
